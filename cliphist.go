@@ -33,7 +33,7 @@ var version string
 func main() {
 	flag.Usage = func() {
 		fmt.Fprintf(flag.CommandLine.Output(), "usage:\n")
-		fmt.Fprintf(flag.CommandLine.Output(), "  $ %s <store|list|decode|delete|delete-query|wipe|version>\n", os.Args[0])
+		fmt.Fprintf(flag.CommandLine.Output(), "  $ %s <store|list|decode|delete|delete-query|wipe|version>\n", flag.CommandLine.Name())
 		fmt.Fprintf(flag.CommandLine.Output(), "options:\n")
 		flag.VisitAll(func(f *flag.Flag) {
 			fmt.Fprintf(flag.CommandLine.Output(), "  -%s (default %s)\n", f.Name, f.DefValue)
